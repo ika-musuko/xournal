@@ -704,6 +704,10 @@ on_optionsAutosaveXoj_activate         (GtkMenuItem     *menuitem,
                                         gpointer         user_data);
 
 void
+on_optionsRememberLastOpened_activate  (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+
+void
 on_optionsLegacyPDFExport_activate     (GtkMenuItem     *menuitem,
                                         gpointer         user_data);
 

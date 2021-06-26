@@ -2012,6 +2012,16 @@
 		  </child>
 
 		  <child>
+		    <widget class="GtkCheckMenuItem" id="optionsRememberLastOpened">
+		      <property name="visible">True</property>
+		      <property name="label" translatable="yes">Remember last opened position</property>
+		      <property name="use_underline">True</property>
+		      <property name="active">True</property>
+		      <signal name="activate" handler="on_optionsRememberLastOpened_activate" last_modification_time="Fri, 26 Jun 2021 12:30:27 EDT"/>
+		    </widget>
+		  </child>
+
+		  <child>
 		    <widget class="GtkCheckMenuItem" id="optionsLeftHanded">
 		      <property name="visible">True</property>
 		      <property name="label" translatable="yes">Left-Handed Scrollbar</property>

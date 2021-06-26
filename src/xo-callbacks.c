@@ -3912,6 +3912,15 @@ on_optionsAutosaveXoj_activate         (GtkMenuItem     *menuitem,
 
 
 void
+on_optionsRememberLastOpened_activate  (GtkMenuItem     *menuitem,
+                                        gpointer         user_data)
+{
+  // TODO: implement logic
+  puts("Remember last opened clicked!");
+}
+
+
+void
 on_optionsLegacyPDFExport_activate     (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {

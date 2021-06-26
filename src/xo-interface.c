@@ -259,6 +259,7 @@ create_winMain (void)
   GtkWidget *optionsLayersPDFExport;
   GtkWidget *optionsAutoloadPdfXoj;
   GtkWidget *optionsAutosaveXoj;
+  GtkWidget *optionsRememberLastOpened;
   GtkWidget *optionsLeftHanded;
   GtkWidget *optionsShortenMenus;
   GtkWidget *optionsPenCursor;
@@ -1451,6 +1452,10 @@ create_winMain (void)
   gtk_widget_show (optionsAutosaveXoj);
   gtk_container_add (GTK_CONTAINER (menuOptions_menu), optionsAutosaveXoj);
 
+  optionsRememberLastOpened = gtk_check_menu_item_new_with_mnemonic (_("Remember last opened position"));
+  gtk_widget_show (optionsRememberLastOpened);
+  gtk_container_add (GTK_CONTAINER (menuOptions_menu), optionsRememberLastOpened);
+
   optionsLeftHanded = gtk_check_menu_item_new_with_mnemonic (_("Left-Handed Scrollbar"));
   gtk_widget_show (optionsLeftHanded);
   gtk_container_add (GTK_CONTAINER (menuOptions_menu), optionsLeftHanded);
@@ -2475,6 +2480,9 @@ create_winMain (void)
   g_signal_connect ((gpointer) optionsAutosaveXoj, "activate",
                     G_CALLBACK (on_optionsAutosaveXoj_activate),
                     NULL);
+  g_signal_connect ((gpointer) optionsRememberLastOpened, "activate",
+                    G_CALLBACK (on_optionsRememberLastOpened_activate),
+                    NULL);
   g_signal_connect ((gpointer) optionsLeftHanded, "toggled",
                     G_CALLBACK (on_optionsLeftHanded_activate),
                     NULL);
@@ -2862,6 +2870,7 @@ create_winMain (void)
   GLADE_HOOKUP_OBJECT (winMain, optionsLayersPDFExport, "optionsLayersPDFExport");
   GLADE_HOOKUP_OBJECT (winMain, optionsAutoloadPdfXoj, "optionsAutoloadPdfXoj");
   GLADE_HOOKUP_OBJECT (winMain, optionsAutosaveXoj, "optionsAutosaveXoj");
+  GLADE_HOOKUP_OBJECT (winMain, optionsRememberLastOpened, "optionsRememberLastOpened");
   GLADE_HOOKUP_OBJECT (winMain, optionsLeftHanded, "optionsLeftHanded");
   GLADE_HOOKUP_OBJECT (winMain, optionsShortenMenus, "optionsShortenMenus");
   GLADE_HOOKUP_OBJECT (winMain, optionsPenCursor, "optionsPenCursor");

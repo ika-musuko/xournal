@@ -344,6 +344,7 @@ typedef struct UIData {
 #if GLIB_CHECK_VERSION(2,6,0)
   GKeyFile *config_data;
 #endif
+  gboolean remember_last_opened;
   int vertical_order[2][VBOX_MAIN_NITEMS]; // the order of interface components
   gchar *default_font_name, *font_name;
   gdouble default_font_size, font_size;
